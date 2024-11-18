@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestamos de libros</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a href="#">BIBLIOTECA</a>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="http://localhost:8000/" id="librosLink">Libros</a></li>
+      <li><a href="http://localhost:8001/" id="clientesLink">Clientes</a></li>
+      <li><a href="http://localhost:8002/" id="pedidosLink">Pedidos</a></li>
+    </ul>
+  </nav>
+
+  <h1>Prestamos de libros</h1>
+
+  <form id="orderForm">
+    <input type="hidden" id="orderId" name="id">
+    <label for="customerId">Selecciona un Cliente:</label>
+    <select id="customerId" name="customerId" required>
+      <option value="">Clientes</option>
+    </select>
+    <label for="bookId">Selecciona un Libro:</label>
+    <select id="bookId" name="bookId" required>
+      <option value="">Libros</option>
+    </select>
+    <label for="initialDate">Fecha de Inicial:</label>
+    <input type="date" id="initialDate" name="initialDate" required>
+    <label for="deliveryDate">Fecha de Entrega:</label>
+    <input type="date" id="deliveryDate" name="deliveryDate" required>
+    <button type="submit">Crear Orden</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Libro</th>
+        <th>Fecha Inicial</th>
+        <th>Fecha de Entrega</th>
+      </tr>
+    </thead>
+    <tbody id="orderList">
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
